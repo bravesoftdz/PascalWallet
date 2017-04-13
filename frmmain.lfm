@@ -1,0 +1,475 @@
+object FormMain: TFormMain
+  Left = 382
+  Height = 571
+  Top = 215
+  Width = 605
+  Caption = 'Pascal Wallet ALFA TEST!'
+  ClientHeight = 571
+  ClientWidth = 605
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.6.4.0'
+  object mmLog: TMemo
+    Left = 16
+    Height = 112
+    Top = 432
+    Width = 487
+    Lines.Strings = (
+      'Log/debug'
+      ''
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object btRefresh: TButton
+    Left = 517
+    Height = 25
+    Top = 432
+    Width = 75
+    Caption = 'Refresh'
+    OnClick = btRefreshClick
+    TabOrder = 1
+  end
+  object PageControl1: TPageControl
+    Left = 16
+    Height = 336
+    Top = 80
+    Width = 576
+    ActivePage = TabSheet4
+    TabIndex = 4
+    TabOrder = 2
+    object TabSheet1: TTabSheet
+      Caption = 'Send To'
+      ClientHeight = 301
+      ClientWidth = 570
+      object edReceiver: TEdit
+        Left = 144
+        Height = 27
+        Top = 51
+        Width = 80
+        TabOrder = 0
+      end
+      object edAmount: TEdit
+        Left = 312
+        Height = 27
+        Top = 51
+        Width = 80
+        TabOrder = 1
+        Text = '0.0000'
+      end
+      object edFee: TEdit
+        Left = 480
+        Height = 27
+        Top = 51
+        Width = 80
+        TabOrder = 2
+        Text = '0.0000'
+      end
+      object lbReceiver: TLabel
+        Left = 24
+        Height = 17
+        Top = 51
+        Width = 107
+        Caption = 'Receivers Acount #'
+        ParentColor = False
+      end
+      object LlbAmont: TLabel
+        Left = 256
+        Height = 17
+        Top = 56
+        Width = 44
+        Caption = 'Amount'
+        ParentColor = False
+      end
+      object lbFee: TLabel
+        Left = 456
+        Height = 17
+        Top = 56
+        Width = 20
+        Caption = 'Fee'
+        ParentColor = False
+      end
+      object mmPayload: TMemo
+        Left = 144
+        Height = 90
+        Top = 128
+        Width = 411
+        Lines.Strings = (
+          ''
+        )
+        MaxLength = 255
+        TabOrder = 3
+      end
+      object rgEncrypt: TRadioGroup
+        Left = 24
+        Height = 105
+        Top = 108
+        Width = 113
+        AutoFill = True
+        Caption = 'Encryption'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 87
+        ClientWidth = 111
+        Enabled = False
+        ItemIndex = 0
+        Items.Strings = (
+          'No Encryption'
+          'Public Key'
+          'Password'
+        )
+        TabOrder = 4
+      end
+      object btnSend: TButton
+        Left = 344
+        Height = 25
+        Top = 256
+        Width = 75
+        Caption = 'Send'
+        OnClick = btnSendClick
+        TabOrder = 5
+      end
+      object btnCancel: TButton
+        Left = 480
+        Height = 25
+        Top = 256
+        Width = 75
+        Caption = 'Cancel'
+        OnClick = btnCancelClick
+        TabOrder = 6
+      end
+      object lbPayload: TLabel
+        Left = 144
+        Height = 17
+        Top = 108
+        Width = 173
+        Caption = 'Message (max 255 characters)'
+        ParentColor = False
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Transactions'
+      ClientHeight = 301
+      ClientWidth = 570
+      object mmTransactions: TMemo
+        Left = 17
+        Height = 252
+        Top = 12
+        Width = 535
+        Lines.Strings = (
+          'Transactions'
+        )
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+      object btTransactions: TButton
+        Left = 437
+        Height = 25
+        Top = 272
+        Width = 115
+        Caption = 'Get Transactions'
+        OnClick = btTransactionsClick
+        TabOrder = 1
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Settings'
+      ClientHeight = 301
+      ClientWidth = 570
+      object Label7: TLabel
+        Left = 35
+        Height = 17
+        Top = 24
+        Width = 121
+        Caption = 'TO DO:         New Keys'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 192
+        Height = 17
+        Top = 24
+        Width = 75
+        Caption = 'Set Password'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 298
+        Height = 17
+        Top = 24
+        Width = 101
+        Caption = 'Export Private Key'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 424
+        Height = 17
+        Top = 24
+        Width = 95
+        Caption = 'Export Public Key'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 35
+        Height = 17
+        Top = 152
+        Width = 191
+        Caption = 'Account - Change Public Password'
+        ParentColor = False
+      end
+      object btAccountChange: TButton
+        Left = 461
+        Height = 25
+        Top = 272
+        Width = 75
+        Caption = 'Change'
+        OnClick = btAccountChangeClick
+        TabOrder = 0
+      end
+      object edPubKey: TEdit
+        Left = 35
+        Height = 27
+        Top = 240
+        Width = 501
+        TabOrder = 1
+      end
+      object Label1: TLabel
+        Left = 35
+        Height = 17
+        Top = 176
+        Width = 56
+        Caption = 'Account #'
+        ParentColor = False
+      end
+      object lbPubKey: TLabel
+        Left = 35
+        Height = 17
+        Top = 224
+        Width = 56
+        Caption = 'Public Key'
+        ParentColor = False
+      end
+      object btShowPubKey: TButton
+        Left = 38
+        Height = 25
+        Top = 89
+        Width = 90
+        Caption = 'Show PubKey'
+        OnClick = btShowPubKeyClick
+        TabOrder = 2
+      end
+      object edAccountPayload: TEdit
+        Left = 144
+        Height = 27
+        Top = 192
+        Width = 304
+        Enabled = False
+        TabOrder = 3
+      end
+      object edAccoundtFee: TEdit
+        Left = 461
+        Height = 27
+        Top = 193
+        Width = 75
+        Enabled = False
+        TabOrder = 4
+      end
+      object lbAccountPayload: TLabel
+        Left = 144
+        Height = 17
+        Top = 176
+        Width = 51
+        Caption = 'Message'
+        ParentColor = False
+      end
+      object lbAccountFee: TLabel
+        Left = 461
+        Height = 17
+        Top = 176
+        Width = 20
+        Caption = 'Fee'
+        ParentColor = False
+      end
+      object cbChngAccounts: TComboBox
+        Left = 35
+        Height = 29
+        Top = 192
+        Width = 100
+        ItemHeight = 0
+        Items.Strings = (
+          ''
+        )
+        TabOrder = 5
+        Text = 'Select'
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Help'
+      ClientHeight = 301
+      ClientWidth = 570
+      object mmHelp: TMemo
+        Left = 16
+        Height = 274
+        Top = 16
+        Width = 544
+        Lines.Strings = (
+          'Pascal Wallet connects to a running Pascal Coin Daemon or '
+          'Wallet using RPC and Json. By default it connects to 127.0.0.1 port 4003.'
+          'But this can be changed to local or remote IPs and ports.'
+          ''
+          'WARNING: This is an ALFA TEST VERSION!!!!!!! '
+          'It is just for testing. Expect bugs an strange behavior. '
+          'Don''t use it unless you know what you are doing ;o)'
+          ''
+          '************* More Comming Later *************'
+        )
+        TabOrder = 0
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'About'
+      ClientHeight = 301
+      ClientWidth = 570
+      object mmAbout: TMemo
+        Left = 8
+        Height = 274
+        Top = 14
+        Width = 552
+        Lines.Strings = (
+          ''
+          'Pascal Wallet version 0.01 ALFA TEST'
+          'Copyright (c) 2017 Björn Biermann'
+          'email: natugle@gmail.com'
+          'github: https://github.com/natugle/'
+          'sourceforge: https://sourceforge.net/projects/pascal-wallet/'
+          ''
+          '*** THIS IS EXPERIMENTAL SOFTWARE. Use it for educational purposes only. ***'
+          ''
+          'This wallet is for the Pascal Coin P2P Cryptocurrency copyright (c) 2016 Albert Molina.'
+          'It may also be compatible with clones og Pascal Coin.'
+          ''
+          'Distributed under the MIT software license, see the accompanying file LICENSE'
+          'or visit http://www.opensource.org/licenses/mit-license.php.'
+          ''
+        )
+        TabOrder = 0
+      end
+    end
+  end
+  object Label4: TLabel
+    Left = 80
+    Height = 17
+    Top = 16
+    Width = 45
+    Caption = 'Account'
+    ParentColor = False
+  end
+  object lbBalance1: TLabel
+    Left = 256
+    Height = 17
+    Top = 16
+    Width = 45
+    Caption = 'Balance'
+    ParentColor = False
+  end
+  object lbBalance: TLabel
+    Left = 328
+    Height = 17
+    Top = 16
+    Width = 38
+    Caption = '0.0000'
+    ParentColor = False
+  end
+  object cbAccounts: TComboBox
+    Left = 136
+    Height = 29
+    Top = 8
+    Width = 100
+    ItemHeight = 0
+    OnChange = cbAccountsChange
+    TabOrder = 3
+    Text = 'Select'
+  end
+  object test2: TButton
+    Left = 517
+    Height = 25
+    Top = 519
+    Width = 75
+    Caption = 'Test'
+    OnClick = test2Click
+    TabOrder = 4
+  end
+  object lbAllAccounts: TLabel
+    Left = 400
+    Height = 17
+    Top = 16
+    Width = 99
+    Caption = 'Total All Accounts'
+    ParentColor = False
+  end
+  object lbTotalBalance: TLabel
+    Left = 520
+    Height = 17
+    Top = 16
+    Width = 38
+    Caption = '0.0000'
+    ParentColor = False
+  end
+  object edUrl: TEdit
+    Left = 136
+    Height = 27
+    Top = 48
+    Width = 296
+    TabOrder = 5
+    Text = '127.0.0.1'
+  end
+  object edPort: TEdit
+    Left = 504
+    Height = 27
+    Top = 48
+    Width = 80
+    TabOrder = 6
+    Text = '4003'
+  end
+  object lbUrl: TLabel
+    Left = 80
+    Height = 17
+    Top = 55
+    Width = 17
+    Caption = 'Url'
+    ParentColor = False
+  end
+  object lbPort: TLabel
+    Left = 468
+    Height = 17
+    Top = 55
+    Width = 23
+    Caption = 'Port'
+    ParentColor = False
+  end
+  object Image1: TImage
+    Left = 16
+    Height = 64
+    Top = 8
+    Width = 64
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869635101000089504E47
+      0D0A1A0A0000000D4948445200000040000000400806000000AA6971DE000000
+      06624B474400FF00FF00FFA0BDA793000000097048597300000DD700000DD701
+      42289B780000000774494D4507E1040C1227313A23BEBE000000DE4944415478
+      DAEDD9411284200C4451A0B8FF95F5022E14129236BFF7539A5790C0D81A2184
+      144EDFF9F1D5DA65FC32BD3440044A7A006F8CA1B45F3DC0A5003C10E400AC11
+      24012C115C9BE097A6B55AD06E639C890E243D62BAA4DC022756CEF216383DFB
+      BDB7846C132C3F05000040E03264757979D378579FC50A600CD2040100802698
+      740CBE6DB83BCF49BB024E4D9BA15EFC6FFE10893A5F74C597B63C6ACB4E01AB
+      7BC6A85CBC2480F5E7B159B5701900EFAFC3B34AA12100514571190200000000
+      000000000000000000000000000000000000000821843CE406B2BD2A72A28970
+      D20000000049454E44AE426082
+    }
+  end
+end
